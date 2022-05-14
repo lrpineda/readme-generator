@@ -24,6 +24,7 @@ In order to use this, you must have NodeJS already installed, after that, follow
 
 - Open the terminal and type "node index"
 - Fill out the questionare
+- Check out this [video](https://drive.google.com/file/d/1W2jzlsO1BxUUs-up9R3WZ-emL2nXgnvt/view) to see how it should behave.
 
 
 
