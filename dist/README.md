@@ -2,7 +2,7 @@
 # Testing generator   [![License](https://img.shields.io/static/v1?label=License&message=BSD&color=yellowgreen&style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause)
   
 ## Description
-Description of Project
+Description goes here
 
 
 ## Table of Contents
@@ -18,19 +18,18 @@ Description of Project
 
 ## Installation
 
-- step 1
-- step 2
+- Step 1
+- Step 2
 
 ## Usage
-
-- Usage 1
-- Usage 2
+Instruction are:
+- Step 1
+- Step 2
 
 
 ## Credits
-Special thanks to:
-- My mom
-- Inquirer
+Thanks to:
+- My Mom
 
 ## License
 Copyright (c) lrpineda. All rights reserved.
@@ -38,14 +37,15 @@ Licensed under the [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) 
   
 
 ## Features
-Uses a lot of stuff:
-- Like 1
-- Like 2
+
+- Feature 1
+- Feature 2
 
 ## Contributing
-Contribute by:
-- Liking it
-- Forking the repo
+Just do the following:
+- Fork the repro
+- Make adjustments
+- Let me know
 
 ## Tests
 
