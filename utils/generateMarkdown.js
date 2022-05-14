@@ -1,3 +1,4 @@
+// * Created a function that formats the content of a section so it can be indented
 const formatSection = (section) => {
   let items = [];
   section.split("-").map((word) => {
@@ -5,7 +6,7 @@ const formatSection = (section) => {
   })
   return `${items.join("\n- ")}`;
 };
-// TODO: Create a function that returns a license badge based on which license is passed in
+// * Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
   if (license==="None") {
@@ -25,7 +26,7 @@ const renderLicenseBadge = (license) => {
   }
 };
 
-// TODO: Create a function that returns the license link
+// * Create a function that returns the license link
 // If there is no license, return an empty string
 const renderLicenseLink = (license) => {
   if (license === "None") {
@@ -45,8 +46,7 @@ const renderLicenseLink = (license) => {
   }
 };
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//  * Create a function that returns the license section of README
 const renderLicenseSection = (license, username) => {
   if (license === "None") {
     return `
@@ -137,7 +137,7 @@ ${formatSection(optionals.tests)}
 
 `;
 };
-// TODO: Create a function to generate markdown for README
+// * Create a function to generate markdown for README
 module.exports = (generateMarkdown) => {
   const {
     title,
