@@ -7,7 +7,6 @@ const formatSection = (section) => {
   return `${items.join("\n- ")}`;
 };
 // * Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
   if (license==="None") {
     return `[![License](https://img.shields.io/static/v1?label=License&message=Unlicense&color=critical&style=for-the-badge)](https://opensource.org/licenses/unlicense)`;
@@ -27,7 +26,6 @@ const renderLicenseBadge = (license) => {
 };
 
 // * Create a function that returns the license link
-// If there is no license, return an empty string
 const renderLicenseLink = (license) => {
   if (license === "None") {
     return `(https://opensource.org/licenses/unlicense)`;
