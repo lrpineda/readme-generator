@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// * Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { table } = require("console");
@@ -6,7 +6,7 @@ const { rejects } = require("assert");
 const { resolve } = require("path");
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+// * Create an array of questions for user input
 const promptQuestions = () => {
     return inquirer.prompt([
         {
@@ -42,7 +42,7 @@ const promptQuestions = () => {
             default: true
         },
         {
-            type: "editor",
+            type: "input",
             name: "installation",
             message: "Please enter installation instructions, seperate each step with a '-'",
             validate: installationInput => {
@@ -68,16 +68,58 @@ const promptQuestions = () => {
             }
         },
         {
+            type: "confirm",
+            name: "confirmcredits",
+            message: "Would you like to add a credit section?",
+            default: true
+
+        },
+        {
+            type: "input",
+            name: "credits",
+            message: "Please enter the name of the contributor, seperate each contributor with a '-'",
+            when: ({ confirmcredits }) => confirmcredits,
+            validate: creditsInput => {
+                if (creditsInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the name of the contributor/s");
+                    return false;
+                }
+            }
+        },
+        {
             type: "list",
             name: "license",
             message: "Please select a license",
-            choices: ["MIT", "ISC", "Apache", "GPL", "BSD", "None"],
+            choices: ["MIT", "Apache", "GPL", "BSD-3-Clause", "None"],
             default: "None"
+        },
+        {
+            type: "confirm",
+            name: "confirmOptionals",
+            message: "Would you like to add optional sections? (e.g. Features, How to Contribute, Tests)",
+            default: false
+        },
+        {
+            type: "input",
+            name: "features",
+            message: "If your project has a lot of features, list them here. Separate each feature with a '-'",
+            when: ({ confirmOptionals }) => confirmOptionals,
+            validate: featuresInput => {
+                if (featuresInput) {
+                    return true;
+                } else {
+                    console.log("Please list the features");
+                    return false;
+                }
+            }
         },
         {
             type: "input",
             name: "contributing",
-            message: "Please enter contributing instructions, seperate each step with a '-'",
+            message: "Please enter contributing instructions, seperate steps with a '-'",
+            when: ({ confirmOptionals }) => confirmOptionals,
             validate: contributingInput => {
                 if (contributingInput) {
                     return true;
@@ -92,6 +134,7 @@ const promptQuestions = () => {
             type: "input",
             name: "tests",
             message: "Please enter testing instructions, seperate each step with a '-'",
+            when: ({ confirmOptionals }) => confirmOptionals,
             validate: testsInput => {
                 if (testsInput) {
                     return true;
@@ -130,23 +173,34 @@ const promptQuestions = () => {
      ])
 };
 
-// TODO: Create a function to write README file
+// * Create a function to write README file
 const writeFile = fileContent => {
-    fs.writeFile('./dist/README.md', fileContent, err => {
-        if (err) {
-            rejects(err);
-            return;
-        }
-
-        resolve({
-            ok: true,
-            message: "Successfully wrote to README.md"
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            } 
+            resolve({
+                ok: true,
+                message: "Successfully created the file"
+            });
         });
-    });
+    })
 
 };
 
-// TODO: Create a function to initialize app
+// * Create a function to initialize app
 promptQuestions().then(readMedata => {
     return generateMarkdown(readMedata);
-});
+})
+    .then(markup => {
+        return writeFile(markup);
+    })
+    .then(result => {
+        console.log(result.message);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+    
