@@ -2,6 +2,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { table } = require("console");
+const { rejects } = require("assert");
+const { resolve } = require("path");
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const promptQuestions = () => {
@@ -31,6 +34,12 @@ const promptQuestions = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: "confirm",
+            name: "confirmTable",
+            message: "Would you like to include a table of contents?",
+            default: true
         },
         {
             type: "editor",
@@ -122,12 +131,22 @@ const promptQuestions = () => {
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+const writeFile = fileContent => {
+    fs.writeFile('./dist/README.md', fileContent, err => {
+        if (err) {
+            rejects(err);
+            return;
+        }
 
-}
+        resolve({
+            ok: true,
+            message: "Successfully wrote to README.md"
+        });
+    });
+
+};
 
 // TODO: Create a function to initialize app
-promptQuestions().then(data => {
-    const { title, description, installation, usage, license, contributing, tests, email, username } = data;
-    console.log(installation);
+promptQuestions().then(readMedata => {
+    return generateMarkdown(readMedata);
 });
