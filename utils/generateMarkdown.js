@@ -66,8 +66,8 @@ const addCredits = (credits) => {
   }
 
   return `
-  ## Credits
-  ${formatSection(credits)}
+## Credits
+${formatSection(credits)}
   `;
 };
 const generateTable = (table, credits, optionals) => {

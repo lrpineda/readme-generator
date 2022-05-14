@@ -1,8 +1,8 @@
 
-# Readme-generator   [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=blueviolet&style=for-the-badge)](https://opensource.org/licenses/MIT)
+# Testing Readme Generator   [![License](https://img.shields.io/static/v1?label=License&message=Apache&color=blue&style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
   
 ## Description
-The following project attempts to provide a professional README.md file auto-generated after filling out a questionare and based of the information provided create the file.
+This is a test for the description section
 
 
 ## Table of Contents
@@ -16,38 +16,40 @@ The following project attempts to provide a professional README.md file auto-gen
   
 
 ## Installation
-In order to use this, you must have NodeJS already installed, after that, follow these steps:
-- Download the repository
-- Open terminal and type "npm install"
+
+- Step 1
+- Step 2
+- Step 3
 
 ## Usage
+This is before giving the instructions:
+- Item 1
+- Item 2
 
-- Open the terminal and type "node index"
-- Fill out the questionare
 
-
+  ## Credits
+  This was done thanks to inquirer and nodejs
+  
 
 ## License
 Copyright (c) lrpineda. All rights reserved.
-Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+Licensed under the [Apache](https://opensource.org/licenses/Apache-2.0) license.
   
 
 ## Features
 
-- Uses inquirer to create the questionare.
-- Creates a badge based of the type of license the user has selected.
+- Uses inquirer for the questionare
+- Creates a badge depending on the license selected
 
 ## Contributing
-If you would like to contribute, make sure to fork the repository and provide clear documentation/comments of the changes/enhancements made.
+If you want to contribute just fork the repo
 
 ## Tests
 
-- Try to fill out every item requested.
-- Attempt to skip required questions.
-- Select "None" as license and see what happens with the badge.
+- Test all the options
 
 
 
 ## Questions
-If you have any questions about the repo, open an issue or contact [via email](mailto:luicks212@gmail.com). or [on GitHub](https://github.com/lrpineda).
+If you have any questions about the repo, open an issue or contact [via email](mailto:test@test.com). or [on GitHub](https://github.com/lrpineda).
   
