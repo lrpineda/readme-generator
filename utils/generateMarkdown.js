@@ -3,24 +3,24 @@ const formatSection = (section) => {
   let items = [];
   section.split("-").map((word) => {
     items.push(word.trim());
-  })
+  });
   return `${items.join("\n- ")}`;
 };
 // * Create a function that returns a license badge based on which license is passed in
 const renderLicenseBadge = (license) => {
-  if (license==="None") {
+  if (license === "None") {
     return `[![License](https://img.shields.io/static/v1?label=License&message=Unlicense&color=critical&style=for-the-badge)](https://opensource.org/licenses/unlicense)`;
   }
-  if (license === "GPL"){
+  if (license === "GPL") {
     return `[![License](https://img.shields.io/static/v1?label=License&message=GPL&color=yellow&style=for-the-badge)](https://opensource.org/licenses/GPL-3.0)`;
   }
-  if (license === "MIT"){
+  if (license === "MIT") {
     return `[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=blueviolet&style=for-the-badge)](https://opensource.org/licenses/MIT)`;
   }
-  if (license === "Apache"){
+  if (license === "Apache") {
     return `[![License](https://img.shields.io/static/v1?label=License&message=Apache&color=blue&style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)`;
   }
-  if (license === "BSD-3-Clause"){
+  if (license === "BSD-3-Clause") {
     return `[![License](https://img.shields.io/static/v1?label=License&message=BSD&color=yellowgreen&style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause)`;
   }
 };
@@ -30,16 +30,16 @@ const renderLicenseLink = (license) => {
   if (license === "None") {
     return `(https://opensource.org/licenses/unlicense)`;
   }
-  if (license === "GPL"){
+  if (license === "GPL") {
     return `(https://opensource.org/licenses/GPL-3.0)`;
   }
-  if (license === "MIT"){
+  if (license === "MIT") {
     return `(https://opensource.org/licenses/MIT)`;
   }
-  if (license === "Apache"){
+  if (license === "Apache") {
     return `(https://opensource.org/licenses/Apache-2.0)`;
   }
-  if (license === "BSD-3-Clause"){
+  if (license === "BSD-3-Clause") {
     return `(https://opensource.org/licenses/BSD-3-Clause)`;
   }
 };
@@ -58,17 +58,15 @@ Currently this project is not under a [license]${renderLicenseLink(license)}.
 Copyright (c) ${username}. All rights reserved.
 Licensed under the [${license}]${renderLicenseLink(license)} license.
   `;
-}
+};
 
 const addCredits = (credits) => {
   if (!credits) {
     return "";
-  }
-
-  return `
+  } 
+    return `
 ## Credits
-${formatSection(credits)}
-  `;
+${formatSection(credits)}`;
 };
 const generateTable = (table, credits, optionals) => {
   if (!table) {
@@ -118,7 +116,7 @@ const generateTable = (table, credits, optionals) => {
   }
 };
 
-const optionalSections = (optional,optionals) => { 
+const optionalSections = (optional, optionals) => {
   if (!optional) {
     return "";
   }
@@ -169,6 +167,8 @@ ${renderLicenseSection(license, rest.username)}
 ${optionalSections(confirmOptionals, rest)}
 
 ## Questions
-If you have any questions about the repo, open an issue or contact [via email](mailto:${rest.email}). or [on GitHub](https://github.com/${rest.username}).
+If you have any questions about the repo, open an issue or contact [via email](mailto:${
+    rest.email
+  }). or [on GitHub](https://github.com/${rest.username}).
   `;
 };

@@ -57,7 +57,7 @@ const promptQuestions = () => {
         {
             type: "input",
             name: "usage",
-            message: "Please enter usage instructions, seperate each step with a '-', if there are screenshots, provide the link/path to the image",
+            message: "Please enter usage instructions, seperate each step with a '-'",
             validate: usageInput => {
                 if (usageInput) {
                     return true;
@@ -69,7 +69,7 @@ const promptQuestions = () => {
         },
         {
             type: "confirm",
-            name: "confirmcredits",
+            name: "confirmCredits",
             message: "Would you like to add a credit section?",
             default: true
 
@@ -78,7 +78,7 @@ const promptQuestions = () => {
             type: "input",
             name: "credits",
             message: "Please enter the name of the contributor, seperate each contributor with a '-'",
-            when: ({ confirmcredits }) => confirmcredits,
+            when: ({ confirmCredits }) => confirmCredits,
             validate: creditsInput => {
                 if (creditsInput) {
                     return true;
