@@ -1,14 +1,13 @@
 
-# Testing generator   [![License](https://img.shields.io/static/v1?label=License&message=BSD&color=yellowgreen&style=for-the-badge)](https://opensource.org/licenses/BSD-3-Clause)
+# Mongobongo-Social   [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=blueviolet&style=for-the-badge)](https://opensource.org/licenses/MIT)
   
 ## Description
-Description goes here
+The following repo is to implement a RESTful API for a social network using MongoDB using Mongoose. Will execute CRUD methods.
 
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 - [Features](#features)
 - [How to Contribute](#contributing)
@@ -17,43 +16,40 @@ Description goes here
   
 
 ## Installation
-
-- Step 1
-- Step 2
+You will need the following in order to run this correctly:
+- NodeJS already installed.
+- MongoDB already installed.
+- Once those are installe, download the repo, on the terminal run npm install and it will install all the dependencies needed.
 
 ## Usage
-Instruction are:
-- Step 1
-- Step 2
+In order to use it, the best and easiest would be to download an api platform like postman and create the routes to GET, POST PUT and DELETE. To start, do an "npm start" in the terminal. Then create the following routes on postman:
+- http://localhost:3001/api/users
+- Use this one to view users GET POST http://localhost:3001/api/users/<insert userid>
 
 
-## Credits
-Thanks to:
-- My Mom
 
 ## License
 Copyright (c) lrpineda. All rights reserved.
-Licensed under the [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) license.
+Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
   
 
 ## Features
 
-- Feature 1
-- Feature 2
+- When you delete a user, it will delete their thought posts as well as removing the user from any other users friends list.
+- When adding a user as a friend it will add each user to it's respective friends list.
+- Users can add reactions to thought posts.
 
 ## Contributing
-Just do the following:
-- Fork the repro
-- Make adjustments
-- Let me know
+Feel free to fork to this repo and if you have any suggestions to improve it, definitely reach out!
 
 ## Tests
 
-- Test 1
-- Test 2
+- Attempt to create different users.
+- Create many thoughts for one user and then proceed to delete the user, it should delete all the thoughts.
+- Follow the instructions provided which is basically testing steps.
 
 
 
 ## Questions
-If you have any questions about the repo, open an issue or contact [via email](mailto:test@test.com). or [on GitHub](https://github.com/lrpineda).
+If you have any questions about the repo, open an issue or contact [via email](mailto:luicks212@gmail.com). or [on GitHub](https://github.com/lrpineda).
   
